@@ -27,5 +27,5 @@ jobs:
     - name: Build project
       run: dotnet build --configuration Release --no-restore
 
-    - name: Package output
-      run: dotnet publish --configuration Release --no-restore --output ./publish
+    - name: Create MSDeploy package
+      run: dotnet msbuild ./StarterWebApp.csproj /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:PackageLocation=./publish/msdeploy.zip

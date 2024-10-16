@@ -19,3 +19,7 @@ The GitHub Actions workflow file is used to automate the build and packaging pro
 4. The workflow will set up the .NET environment, restore dependencies, build the project, and package the output.
 
 You can check the status of the workflow in the "Actions" tab of your GitHub repository.
+
+### Packaging the Website
+
+After the project is published, the CI pipeline includes a step to package the website in a MSDeploy zip file. This step runs the `dotnet msbuild` command with the `MSDeployPublish` target to create the MSDeploy zip package. The MSDeploy zip package is created in the `./publish` directory.
